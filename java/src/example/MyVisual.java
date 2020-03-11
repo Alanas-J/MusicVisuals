@@ -6,10 +6,11 @@ public class MyVisual extends Visual
 {    
     WaveForm wf;
     AudioBandsVisual abv;
+    WinXP wxp;
 
     public void settings()
     {
-        size(1024, 500);
+        size(800, 800);
         
         // Use this to make fullscreen
         //fullScreen();
@@ -30,6 +31,7 @@ public class MyVisual extends Visual
         
         wf = new WaveForm(this);
         abv = new AudioBandsVisual(this);
+        wxp = new WinXP(this);
     }
 
     public void keyPressed()
@@ -58,7 +60,7 @@ public class MyVisual extends Visual
 
         // Call this is you want to get the average amplitude
         calculateAverageAmplitude();        
-        wf.render();
-        abv.render();
+        wxp.render();
+        //abv.render();
     }
 }
