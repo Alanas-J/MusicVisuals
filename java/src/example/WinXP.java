@@ -9,6 +9,7 @@ public class WinXP
     float cy = 0;
     float audioMaxHeight;
     int audioWaveWidth = 500;
+   
 
     public WinXP(MyVisual mv)
     {
@@ -17,9 +18,15 @@ public class WinXP
 
     }
 
+
     public void render()
     {
+        // random counter variable
+        mv.counter++;
         mv.translate(mv.height/2, mv.width/2);
+
+        mv.rotate(mv.counter);
+
 
 
         mv.colorMode(PApplet.HSB);
@@ -31,7 +38,8 @@ public class WinXP
                 , 255
             );
 
-            mv.line(i-audioWaveWidth/2, -audioMaxHeight * mv.ab.get(i), audioWaveWidth-250, audioMaxHeight * mv.ab.get(i));
+            mv.line(i-audioWaveWidth/2, -audioMaxHeight * mv.ab.get(i), i-audioWaveWidth/2, audioMaxHeight * mv.ab.get(i));
+            
         }
     }
 }

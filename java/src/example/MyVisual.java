@@ -7,6 +7,7 @@ public class MyVisual extends Visual
     WaveForm wf;
     AudioBandsVisual abv;
     WinXP wxp;
+    int counter = 0;
 
     public void settings()
     {
