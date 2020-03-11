@@ -21,15 +21,27 @@ public class WinXP
 
     public void render()
     {
+        mv.colorMode(PApplet.HSB);
+        mv.noStroke();
+        mv.fill(0,20);
+        mv.rect(0,0,mv.width,mv.height);
+        mv.copy(0,0,mv.width,mv.height,10,10,mv.width,mv.height);
+
         // random counter variable
         mv.counter++;
         mv.translate(mv.height/2, mv.width/2);
+        mv.fill(mv.counter%255,100,255,100);
 
-        mv.rotate(mv.counter);
+        if(mv.amplitude > .2f){
+           // mv.circle(0, 0, audioWaveWidth);
+        }
+     
+
+        mv.rotate(mv.counter/60);
+        //mv.circle(0,audioWaveWidth/2, audioWaveWidth*mv.amplitude);
+        //mv.circle(0,-audioWaveWidth/2, audioWaveWidth*mv.amplitude);
 
 
-
-        mv.colorMode(PApplet.HSB);
         for(int i = 0 ; i < audioWaveWidth ; i ++) // use mv.ab.size() 1024 for whole buffer
         {
             mv.stroke(

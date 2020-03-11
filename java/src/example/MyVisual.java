@@ -7,7 +7,7 @@ public class MyVisual extends Visual
     WaveForm wf;
     AudioBandsVisual abv;
     WinXP wxp;
-    int counter = 0;
+    float counter = 0;
 
     public void settings()
     {
@@ -46,7 +46,7 @@ public class MyVisual extends Visual
 
     public void draw()
     {
-        background(0);
+        //background(0);
         try
         {
             // Call this if you want to use FFT data
