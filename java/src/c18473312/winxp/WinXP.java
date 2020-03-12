@@ -29,8 +29,8 @@ public class WinXP
 
         //vertex rotation code 
         int speedFromCentre = 5;
-        copyVertex[0] = (int)(speedFromCentre*MyVisual.cos(-mv.fCounter/4000%360)-speedFromCentre*MyVisual.sin(-mv.fCounter/4000%360));
-        copyVertex[1] = (int)(speedFromCentre*MyVisual.sin(-mv.fCounter/4000%360)+speedFromCentre*MyVisual.cos(-mv.fCounter/4000%360));
+        copyVertex[0] = (int)(speedFromCentre*MyVisual.cos(-mv.fCounter/400%360)-speedFromCentre*MyVisual.sin(-mv.fCounter/400%360));
+        copyVertex[1] = (int)(speedFromCentre*MyVisual.sin(-mv.fCounter/400%360)+speedFromCentre*MyVisual.cos(-mv.fCounter/400%360));
 
         if(mv.lerpedAmplitude > .2f){
 
@@ -51,10 +51,10 @@ public class WinXP
 
         mv.colorMode(PApplet.HSB);
         mv.noStroke();
-        mv.fill(0,10);
+        mv.fill(0,30);
         mv.rect(0,0,mv.width,mv.height);
 
-        mv.copy(0,0,mv.width,mv.height,copyVertex[0],copyVertex[1],mv.width,mv.height);
+        mv.copy(0,0,mv.width,mv.height,copyVertex[0]-10,copyVertex[1]-10,mv.width+20,mv.height+20);
 
         // random counter variable
         mv.fCounter++;
@@ -75,17 +75,16 @@ public class WinXP
          
         
 
+        
+        mv.rotate(mv.fCounter/60);
         for(int i = 0; i < 180; i++){
             mv.fill(mv.fCounter%255,100,255,255);
             mv.noStroke();
-            mv.circle(mv.width/3,0, 1);
-            mv.circle(-mv.width/3,0, 1);
+            mv.circle((int)(mv.height/2.1),0, 1);
+            mv.circle((int)(-mv.height/2.1),0, 1);
 
             mv.rotate(-2);
         }
-
-        mv.rotate(mv.fCounter/60);
-        
      
 
         if(mv.amplitude > .1f){
@@ -119,5 +118,8 @@ public class WinXP
 
 
         }       
+
+        
+
     }
 }
