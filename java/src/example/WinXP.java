@@ -10,7 +10,7 @@ public class WinXP
     float cy = 0;
     float audioMaxHeight;
     int audioWaveWidth = 500;
-   
+    int copyVertex[] = new int[2];
 
     public WinXP(MyVisual mv)
     {
@@ -19,15 +19,21 @@ public class WinXP
 
     }
 
+    
 
     public void render()
     {
-        
+        //vertex rotation code
+        copyVertex[0] = (int) (10*MyVisual.cos(mv.counter%360)-10*MyVisual.sin(mv.counter%360));
+        copyVertex[1] = (int)(10*MyVisual.sin(mv.counter%360)+10*MyVisual.cos(mv.counter%360));
+
+
+
         mv.colorMode(PApplet.HSB);
         mv.noStroke();
         mv.fill(0,10);
         mv.rect(0,0,mv.width,mv.height);
-        mv.copy(0,0,mv.width,mv.height,5,5,mv.width,mv.height);
+        mv.copy(0,0,mv.width,mv.height,copyVertex[0],copyVertex[1],mv.width,mv.height);
 
         // random counter variable
         mv.counter++;
@@ -40,12 +46,14 @@ public class WinXP
         mv.rotate(mv.counter/60);
 
         if(mv.amplitude > .1f){
-            float oldAmp=0;
+            
             for(int i = 0 ; i < 15 ; i ++) // use mv.ab.size() 1024 for whole buffer
             {
                 mv.stroke(mv.counter%255,200,255,(int) MyVisual.map(mv.amplitude,0f,.4f,0f,255f));
-                
-                
+                //mv.strokeWeight(MyVisual.map(mv.amplitude,0f,.4f,1f,8f));
+                mv.strokeWeight(4);
+
+
                 float x1 = MyVisual.map(i, 0, 15, -audioWaveWidth / 2, audioWaveWidth / 2);
                 float x2 = MyVisual.map(i+1, 0, 15, -audioWaveWidth / 2, audioWaveWidth / 2);
                 
@@ -54,8 +62,8 @@ public class WinXP
 
                 //mv.line(x1, y1, x2, y2);
                 
-                oldAmp = mv.ab.get(i);
-                //prev
+                
+                
     
                 //mv.line(i-audioWaveWidth/2, -audioMaxHeight * mv.ab.get(i), i-audioWaveWidth/2, audioMaxHeight * mv.ab.get(i));
                 
