@@ -44,17 +44,20 @@ public class WinXP
 
             copyVertex[0] = (temp1/4)+ (int)(shake*temp1*MyVisual.cos(-mv.fCounter%360)-temp2*MyVisual.sin(-mv.fCounter%360));
             copyVertex[1] = (temp2/4)+ (int)(shake*temp1*MyVisual.sin(-mv.fCounter%360)+temp2*MyVisual.cos(-mv.fCounter%360));
+            mv.copy(10,10,mv.width-20,mv.height-20,copyVertex[0],copyVertex[1],mv.width,mv.height);
 
         }
 
-
+        mv.resetMatrix();
 
         mv.colorMode(PApplet.HSB);
         mv.noStroke();
-        mv.fill(0,30);
+        mv.fill(0,20);
         mv.rect(0,0,mv.width,mv.height);
 
-        mv.copy(0,0,mv.width,mv.height,copyVertex[0]-10,copyVertex[1]-10,mv.width+20,mv.height+20);
+        mv.copy(0,0,mv.width,mv.height,copyVertex[0],copyVertex[1],mv.width,mv.height);
+        //mv.copy(10,10,mv.width-20,mv.height-20,copyVertex[0],copyVertex[1],mv.width,mv.height);
+        
 
         // random counter variable
         mv.fCounter++;
