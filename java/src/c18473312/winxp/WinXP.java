@@ -32,7 +32,7 @@ public class WinXP
         copyVertex[0] = (int)(speedFromCentre*MyVisual.cos(-mv.fCounter/400%360)-speedFromCentre*MyVisual.sin(-mv.fCounter/400%360));
         copyVertex[1] = (int)(speedFromCentre*MyVisual.sin(-mv.fCounter/400%360)+speedFromCentre*MyVisual.cos(-mv.fCounter/400%360));
 
-        if(mv.lerpedAmplitude > .2f){
+        if(mv.lerpedAmplitude > .4f){
 
             int temp1 = 2*copyVertex[0];
             int temp2 = 2*copyVertex[1];
