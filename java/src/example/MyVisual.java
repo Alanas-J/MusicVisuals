@@ -6,8 +6,6 @@ public class MyVisual extends Visual
 {    
     WaveForm wf;
     AudioBandsVisual abv;
-    WinXP wxp;
-    float counter = 0;
 
     public void settings()
     {
@@ -32,7 +30,6 @@ public class MyVisual extends Visual
         
         wf = new WaveForm(this);
         abv = new AudioBandsVisual(this);
-        wxp = new WinXP(this);
     }
 
     public void keyPressed()
@@ -61,7 +58,6 @@ public class MyVisual extends Visual
 
         // Call this is you want to get the average amplitude
         calculateAverageAmplitude();        
-        wxp.render();
         //abv.render();
     }
 }

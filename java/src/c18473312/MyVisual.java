@@ -1,5 +1,6 @@
 package c18473312;
 
+import c18473312.fractaltree.FractalGenerator;
 import c18473312.winxp.WinXP;
 import ie.tudublin.*;
 
@@ -8,6 +9,8 @@ public class MyVisual extends Visual
     WaveForm wf;
     AudioBandsVisual abv;
     WinXP wxp;
+    FractalGenerator tree;
+
     public float fCounter = 0;
 
     public void settings()
@@ -34,6 +37,8 @@ public class MyVisual extends Visual
         wf = new WaveForm(this);
         abv = new AudioBandsVisual(this);
         wxp = new  WinXP(this);
+
+        tree = new FractalGenerator(this);
     }
 
     public void keyPressed()
@@ -64,6 +69,7 @@ public class MyVisual extends Visual
         calculateAverageAmplitude();        
         //wf.render();
         //abv.render();
-        wxp.render();
+        //wxp.render();
+        tree.render();
     }
 }
