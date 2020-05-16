@@ -10,6 +10,7 @@ public class MyVisual extends Visual
     AudioBandsVisual abv;
     WinXP wxp;
     FractalGenerator tree;
+    int visualSwitch = 0;
 
     public float fCounter = 0;
 
@@ -37,7 +38,6 @@ public class MyVisual extends Visual
         wf = new WaveForm(this);
         abv = new AudioBandsVisual(this);
         wxp = new  WinXP(this);
-
         tree = new FractalGenerator(this);
     }
 
@@ -53,6 +53,7 @@ public class MyVisual extends Visual
     public void draw()
     {
         
+
         try
         {
             // Call this if you want to use FFT data
@@ -64,12 +65,38 @@ public class MyVisual extends Visual
         }
         // Call this is you want to use frequency bands
         calculateFrequencyBands(); 
-
         // Call this is you want to get the average amplitude
-        calculateAverageAmplitude();        
+        calculateAverageAmplitude();   
+        
+        // __________________________ RENDERER CODE
+
+
+        switch(visualSwitch){
+
+            case 0 : 
+                wxp.render();
+                break;
+            case 1 : 
+                
+                break;
+
+            case 2 : 
+                background(0);
+                abv.render();
+                break;
+
+            case 3 : 
+                background(0);
+                wf.render();
+                break;
+            
+            default:
+                break;
+
+        }
         //wf.render();
         //abv.render();
-        wxp.render();
+        //
         //tree.render();
     }
 }
