@@ -11,6 +11,7 @@ public class MyVisual extends Visual
     WinXP wxp;
     FractalGenerator tree;
     int visualSwitch = 0;
+    int playSong = 0;
 
     public float fCounter = 0;
 
@@ -52,8 +53,14 @@ public class MyVisual extends Visual
 
     public void draw()
     {
-        
+        if(playSong == 1){
+            as.stop();
+            as.trigger();
+            playSong = 0;
+        }
 
+
+        
         try
         {
             // Call this if you want to use FFT data

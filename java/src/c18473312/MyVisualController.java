@@ -55,18 +55,42 @@ public class MyVisualController extends Visual
         
 
 
-        stroke(100);
-        fill(25);
-        rect(0, 0,200,100);
+        
+       
 
         for(int i = 0; i < options + 1  ; i++ ){
-
+            fill(25);
+            stroke(100);
             if(i == 0){
+                fill(25,125,25);
+            }
+
+            if (i-1 == controlledVisual.visualSwitch){
+
+                fill(70);
 
             }
 
+
             rect(0, i*boxHeight,boxWidth,boxHeight);
 
+            if(mouseY >= i*boxHeight && mouseY < (i+1)*boxHeight){
+
+                fill(70,100);
+                rect(0, i*boxHeight,boxWidth,boxHeight);
+
+                if(mousePressed){
+
+                    if(i != 0){
+                        controlledVisual.visualSwitch = i-1;
+                    }
+                    else{
+                        controlledVisual.playSong = 1;
+                    }
+                    
+                }
+
+            }
 
         }
 

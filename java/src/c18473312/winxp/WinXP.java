@@ -69,7 +69,7 @@ public class WinXP
             mv.fill(mv.fCounter%255,100,255,255);
             mv.textAlign(MyVisual.CENTER);
             mv.textSize(40);
-            mv.text("Press  ' _ '  to play.",0,0);
+            mv.text("Press  ' Start Song '  to play.",0,0);
         }
         //mv.scale(MyVisual.map(mv.lerpedAmplitude,0f,1f,0.9f,1.5f));
 
