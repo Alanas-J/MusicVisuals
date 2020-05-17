@@ -11,14 +11,14 @@ class Branch{
 
     Branch[] branches;
     
-    Branch(MyVisual mv,float start, float amplitude, float angle){
+    Branch(MyVisual mv,float start, float amplitude, float angle,int branches){
 
         this.mv = mv;
         this.start = start;
         this.amplitude = amplitude;
         this.angle = angle;
 
-        branch();
+        branch(branches);
 
     }
     
@@ -33,6 +33,7 @@ class Branch{
 
     void show(){
         
+  
         
         
         mv.rotate(this.angle);
@@ -52,18 +53,22 @@ class Branch{
     } //
 
 
-    void branch(){
+    void branch(int branchAmt){
 
+        if (branchAmt > 0){
         
-        
-        if (mv.branchCounter < 50){
-
             branches = new Branch[2];
             mv.branchCounter++;
             mv.branchCounter++;
-            branches[0] = new Branch(mv, start-amplitude, amplitude/2, 30);
-            branches[1] = new Branch(mv, start-amplitude, amplitude/2, -30);
+
+
+            float angle = MyVisual.map(mv.lerpedAmplitude,0,1,3.14f/10f,3.14f/2f);
+            
+            branches[0] = new Branch(mv, start-amplitude, amplitude/1.25f, angle,branchAmt-2);
+            branches[1] = new Branch(mv, start-amplitude, amplitude/1.25f, -angle,branchAmt-2);
+        
         }
+        
 
         
 
