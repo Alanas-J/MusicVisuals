@@ -18,6 +18,8 @@ class Branch{
         this.amplitude = amplitude;
         this.angle = angle;
 
+        branch();
+
     }
     
 
@@ -31,17 +33,18 @@ class Branch{
 
     void show(){
         
-
-        mv.fill(255);
-        mv.stroke(255);
-        mv.translate(start, 0);
+        
+        
         mv.rotate(this.angle);
+        
 
         mv.line(0, 0, 0, amplitude);
 
         if(branches != null){
-
+            mv.translate(0, amplitude);
+            mv.pushMatrix();
             branches[0].show();
+            mv.popMatrix();
             branches[1].show();
 
         } //
@@ -51,13 +54,15 @@ class Branch{
 
     void branch(){
 
-        branches = new Branch[2];
         
-        if (mv.branchCounter < 512){
+        
+        if (mv.branchCounter < 50){
 
+            branches = new Branch[2];
             mv.branchCounter++;
-            branches[0] = new Branch(mv, start+amplitude, amplitude/2, angle+30);
-            branches[1] = new Branch(mv, start+amplitude, amplitude/2, angle-30);
+            mv.branchCounter++;
+            branches[0] = new Branch(mv, start-amplitude, amplitude/2, 30);
+            branches[1] = new Branch(mv, start-amplitude, amplitude/2, -30);
         }
 
         

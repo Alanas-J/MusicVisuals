@@ -85,6 +85,7 @@ public class MyVisual extends Visual
             case 1 : 
                 background(0);
                 tree.render();
+                resetMatrix();
                 break;
 
             case 2 : 

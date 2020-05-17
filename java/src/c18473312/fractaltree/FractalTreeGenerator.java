@@ -24,14 +24,18 @@ public class FractalTreeGenerator
     }
 
     public void render() {
-        
+    
         mv.translate(mv.width / 2, mv.height / 2);
-
+        
+        mv.branchCounter = 0;
+        root = new Branch(mv, 0f,-mv.height/5f, 0);
 
         
-        root = new Branch(mv, 0f,mv.height/5f , 0f);
 
-        
+        mv.fill(255);
+        mv.stroke(255);
+
+    
         root.show();
 
 
