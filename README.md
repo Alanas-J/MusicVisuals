@@ -1,8 +1,8 @@
 # Music Visualiser Project
 
-Name:
+Name: Alanas Jakubauskas
 
-Student Number: 
+Student Number: C18473312
 
 ## Instructions
 - Fork this repository and use it a starter project for your assignment
@@ -13,9 +13,17 @@ Student Number:
 
 # Description of the assignment
 
+My Visual Assignment is a music playing audio visualuzer with a click based GUI with two new self made visuals ontop of the example visuals given in the lab test which can be cycled through at any time.
+
+
 # Instructions
 
+Just click, no hidden keybinds.
+
+
 # How it works
+
+
 
 # What I am most proud of in the assignment
 
