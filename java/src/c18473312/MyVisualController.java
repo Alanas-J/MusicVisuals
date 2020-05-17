@@ -62,7 +62,7 @@ public class MyVisualController extends Visual
             fill(25);
             stroke(100);
             if(i == 0){
-                fill(25,125,25);
+                fill(60,60,180);
             }
 
             if (i-1 == controlledVisual.visualSwitch){
@@ -76,7 +76,7 @@ public class MyVisualController extends Visual
 
             if(mouseY >= i*boxHeight && mouseY < (i+1)*boxHeight){
 
-                fill(70,100);
+                fill(255,20);
                 rect(0, i*boxHeight,boxWidth,boxHeight);
 
                 if(mousePressed){

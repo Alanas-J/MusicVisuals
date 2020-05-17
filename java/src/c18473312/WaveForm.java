@@ -21,7 +21,7 @@ public class WaveForm
         {
             mv.stroke(
                 PApplet.map(i, 0, mv.width, 0, 255)
-                , 255
+                , 200
                 , 255
             );
 

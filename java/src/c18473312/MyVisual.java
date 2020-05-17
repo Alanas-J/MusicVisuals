@@ -1,6 +1,6 @@
 package c18473312;
 
-import c18473312.fractaltree.FractalGenerator;
+import c18473312.fractaltree.FractalTreeGenerator;
 import c18473312.winxp.WinXP;
 import ie.tudublin.*;
 
@@ -9,8 +9,8 @@ public class MyVisual extends Visual
     WaveForm wf;
     AudioBandsVisual abv;
     WinXP wxp;
-    FractalGenerator tree;
-    int visualSwitch = 0;
+    FractalTreeGenerator tree;
+    int visualSwitch = 1;
     int playSong = 0;
 
     public float fCounter = 0;
@@ -39,7 +39,7 @@ public class MyVisual extends Visual
         wf = new WaveForm(this);
         abv = new AudioBandsVisual(this);
         wxp = new  WinXP(this);
-        tree = new FractalGenerator(this);
+        tree = new FractalTreeGenerator(this);
     }
 
     public void keyPressed()
@@ -59,8 +59,6 @@ public class MyVisual extends Visual
             playSong = 0;
         }
 
-
-        
         try
         {
             // Call this if you want to use FFT data
@@ -84,7 +82,8 @@ public class MyVisual extends Visual
                 wxp.render();
                 break;
             case 1 : 
-                
+                background(0);
+                tree.render();
                 break;
 
             case 2 : 
@@ -101,9 +100,6 @@ public class MyVisual extends Visual
                 break;
 
         }
-        //wf.render();
-        //abv.render();
-        //
-        //tree.render();
+   
     }
 }
