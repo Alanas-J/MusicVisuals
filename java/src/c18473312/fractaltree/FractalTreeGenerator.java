@@ -14,7 +14,7 @@ public class FractalTreeGenerator
     int audioWaveWidth = 500;
 
 
-
+    
 
     
     Branch root;
@@ -26,32 +26,33 @@ public class FractalTreeGenerator
     }
 
     public void render() {
-    
-        mv.translate(mv.width / 2, mv.height / 2);
-        
-        mv.branchCounter = 0;
-        
+        mv.colorMode(MyVisual.HSB);
+        mv.strokeWeight(1);
 
-        
-        
-        tree = new Branch(mv, 0f,-mv.height/7f, 0,20);
+        mv.fill(0,40);
+        mv.rect(-1, -1, mv.width+1, mv.height+1);
 
 
         mv.fill(255);
         mv.stroke(255);
 
-    
-        tree.show();
 
+        mv.fCounter++;
 
         for( int i = 0; i < 6; i++ ){
+            mv.resetMatrix();
+            
 
-            mv.rotate(MyVisual.PI/6f);
+            mv.translate(mv.width / 2, mv.height / 2);
+            mv.branchCounter = 0;
+        
+            mv.rotate( MyVisual.map(mv.fCounter%360, 0, 360, 0, MyVisual.PI*2));
+            mv.rotate( MyVisual.map((float)i, 0f, 6f, 0f, MyVisual.PI*2));
 
-            tree = new Branch(mv, 0f,-mv.height/7f, 0,20);
+            tree = new Branch(mv, 0f, MyVisual.map(mv.lerpedAmplitude,0,.5f,-mv.height/15f,-mv.height/4f), 0,20);
 
-            mv.fill(255);
-            mv.stroke(255);
+            mv.fill((mv.fCounter/10)%255);
+            mv.stroke((mv.fCounter/10)%255,255,255);
 
     
             tree.show();

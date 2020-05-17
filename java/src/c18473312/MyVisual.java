@@ -83,7 +83,6 @@ public class MyVisual extends Visual
                 wxp.render();
                 break;
             case 1 : 
-                background(0);
                 tree.render();
                 resetMatrix();
                 break;

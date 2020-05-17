@@ -16,6 +16,7 @@ public class WaveForm
 
     public void render()
     {
+        mv.strokeWeight(5);
         mv.colorMode(PApplet.HSB);
         for(int i = 0 ; i < mv.width ; i ++)
         {
