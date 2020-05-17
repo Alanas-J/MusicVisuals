@@ -52,7 +52,7 @@ The next thing of pride was inspired by a previous student's video in which they
 
 Another little cool this was making the processing copy function into a shaking tool via applying some 2D matrix translation calculations.
 
-This is an image using an absolute URL:
+
 
 
 
