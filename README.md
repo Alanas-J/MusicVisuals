@@ -58,7 +58,4 @@ This is an image using an absolute URL:
 
 YOUTUBE VIDEO :
 
-[![YouTube](https://www.youtube.com/watch?v=wkndoSFnlQY)]
-
-This is a table:
-
+[![Youtube](https://i9.ytimg.com/vi/wkndoSFnlQY/mq3.jpg?sqp=CIeChvYF&rs=AOn4CLCCRoA489fXEhfjWlLlDWffJCt5Tw)](https://www.youtube.com/watch?v=wkndoSFnlQY))
