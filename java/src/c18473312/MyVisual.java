@@ -14,6 +14,7 @@ public class MyVisual extends Visual
     int playSong = 0;
 
     public float fCounter = 0;
+    public int branchCounter = 0;
 
     public void settings()
     {

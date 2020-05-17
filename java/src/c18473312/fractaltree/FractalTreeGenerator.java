@@ -29,7 +29,7 @@ public class FractalTreeGenerator
 
 
         
-        root = new Branch(mv, mv.width/2, mv.height/2, mv.width/2, mv.height/4);
+        root = new Branch(mv, 0f,mv.height/5f , 0f);
 
         
         root.show();
