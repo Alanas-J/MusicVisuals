@@ -50,7 +50,7 @@ There's also alot cooler things to do with fractals not explored :
 
 The next thing of pride was inspired by a previous student's video in which they created an alot more advanced interface. But with my lack of discipline during the corona and being swamped with other assignment deadlines 3 days before this I enjoyed my little controller addition. It was nice to learn about how object interraction may be implemented between two objects by having one object reference pass into the other's constructor so that it may be influenced.
 
-Another little cool this was making the processing copy function into a shaking tool via applying some 2D matrix translation calculations.
+Another little cool thing was making the processing copy function into a shaking tool via applying some 2D matrix translation calculations.
 
 
 
@@ -58,4 +58,4 @@ Another little cool this was making the processing copy function into a shaking 
 
 YOUTUBE VIDEO :
 
-[![Youtube](https://i9.ytimg.com/vi/wkndoSFnlQY/mq3.jpg?sqp=CIeChvYF&rs=AOn4CLCCRoA489fXEhfjWlLlDWffJCt5Tw)](https://www.youtube.com/watch?v=wkndoSFnlQY))
+[![Youtube](https://i9.ytimg.com/vi/wkndoSFnlQY/mq3.jpg?sqp=CIeChvYF&rs=AOn4CLCCRoA489fXEhfjWlLlDWffJCt5Tw)](https://www.youtube.com/watch?v=wkndoSFnlQY)
